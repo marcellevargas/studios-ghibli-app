@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
+  background-color: #F26D78;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: left;
+  text-align: left;
+}
+
+.header-logo {
+  width: 167px;
+  height: 87px;
+  margin-right: 15px;
+}
+
+.header-link {
+  color: white;
+  font-size: 25px;
+  margin-right: 25px;
+}
+
+.hamburguer-icon {
+  border: 0;
+  height: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  right: 25px;
+  display: none;
+  font-size: 35px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hamburguer-icon:hover {
+  opacity: 0.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .header-container {
+    justify-content: space-between;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hamburguer-icon {
+    display: block;
+  }
+
+  .header-container__menu-content {
+    display: none;
+    position: absolute;
+    top: 107px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color:#F26D78;
+    text-align: center;
+  }
+
+  .header-container__menu-content a {
+    color: white;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .header-container__menu-content a:hover {
+    background-color: rgb(245, 153, 160, 0.6);
+  }
+
+  .header-container__menu-content a:focus {
+    background-color: rgb(245, 153, 160, 0.6);
+  }
+
+  .header-container__menu-content.expanded {
+    display: inline-flex;
+    justify-content: center;
   }
 }
